@@ -1,6 +1,6 @@
 #Task 1a
-inp=open('Task 1/a/input1a.txt','r')
-out=open('Task 1/a/output1a.txt','w')
+inp=open('Lab 1/Task 1/a/input1a.txt','r')
+out=open('Lab 1/Task 1/a/input1a.txt','w')
 
 n=int(inp.readline())
 
