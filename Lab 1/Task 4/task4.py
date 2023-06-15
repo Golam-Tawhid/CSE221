@@ -18,8 +18,8 @@ def bubbleSort(train_info):
         train_info[j], train_info[j + 1] = train_info[j + 1], train_info[j]
   return train_info
 
-inp=open('Task 4/input4.txt','r')
-output_file=open('Task 4/output4.txt','w')
+inp=open('Lab 1/Task 4/input4.txt','r')
+output_file=open('Lab 1/Task 4/output4.txt','w')
 
 n=int(inp.readline())
 train_info = []

@@ -18,8 +18,8 @@ If no swaps are made during a pass, it means that the array is already sorted.
 It will end the programme early and the time-complexity will be θ(n). 
 """
 
-inp=open('C:/Users/HP/Documents/Lab1/Task 2/input2.txt','r')
-out=open('C:/Users/HP/Documents/Lab1/Task 2/output2.txt','w')
+inp=open('Lab 1/Task 2/input2.txt','r')
+out=open('Lab 1/Task 2/output2.txt','w')
 
 n=int(inp.readline())
 arr = list(map(int, inp.readline().strip().split()))

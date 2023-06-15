@@ -1,5 +1,5 @@
 inp= open('Lab 2/Task 1/input1.txt','r')
-output_file= open('Lab 2/Task 1/input1.txt','w')
+output_file= open('Lab 2/Task 1/output1.txt','w')
 
 n,num=map(int, inp.readline().strip().split())
 

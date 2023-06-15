@@ -12,3 +12,4 @@ PadmaExpress will departure for Chittagong at 20:30
 ABC will departure for Khulna at 03:00
 ABCE will departure for Sylhet at 23:05
 PadmaExpress will departure for Dhaka at 19:30
+

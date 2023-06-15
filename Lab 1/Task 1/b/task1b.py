@@ -12,8 +12,8 @@ def calculator(exp):
     elif operator == '/':
       print(f"The result of {operand1} {operator} {operand2} is {operand1 / operand2}", file=out)
       
-inp=open('Task 1/b/input1b.txt','r')
-out=open('Task 1/b/output1b.txt','w')
+inp=open('Lab 1/Task 1/b/input1b.txt','r')
+out=open('Lab 1/Task 1/b/output1b.txt','w')
 
 n=int(inp.readline())
 

@@ -12,8 +12,8 @@ def selection_sort(ids, marks):
 
   return ids, marks
 
-inp=open('Task 3/input3.txt','r')
-output_file=open('Task 3/output3.txt','w')
+inp=open('Lab 1/Task 3/input3.txt','r')
+output_file=open('Lab 1/Task 3/output3.txt','w')
 
 n=int(inp.readline())
 id = list(map(int, inp.readline().strip().split()))
