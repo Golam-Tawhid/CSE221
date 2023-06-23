@@ -1,4 +1,4 @@
-def merge(n_list, m_list):
+def final_merge(n_list, m_list):
     i, j = 0, 0
     f_list = []
 
@@ -15,24 +15,16 @@ def merge(n_list, m_list):
 
     return f_list
 
-
-def merge_sort(arr):
-    if len(arr) <= 1:
-        return arr
-
-    mid = len(arr) // 2
-    l_arr = merge_sort(arr[:mid])
-    r_arr = merge_sort(arr[mid:])
-    return merge(l_arr, r_arr)
-
-
-inp = open('Lab 2/Task 3/input3.txt', 'r')
-out = open('Lab 2/Task 3/output3.txt', 'w')
+inp = open('Lab 2/Task 2/input2.txt', 'r')
+out = open('Lab 2/Task 2/output2.txt', 'w')
 
 n = int(inp.readline().strip())
-arr= list(map(int, inp.readline().strip().split()))
+n_list = list(map(int, inp.readline().strip().split()))
 
-f_list = merge_sort(arr)
+m = int(inp.readline().strip())
+m_list = list(map(int, inp.readline().strip().split()))
+
+f_list = final_merge(n_list, m_list)
 
 print(' '.join(str(element) for element in f_list), file=out)
 
