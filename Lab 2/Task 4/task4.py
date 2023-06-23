@@ -19,3 +19,8 @@ max_val = find_max(arr, 0, len(arr) - 1)
 print(max_val, file=out)
 
 out.close()
+
+"""
+The time complexity of the code id O(logn). Because the algorithm divide the array into half recursively.
+It divides the array until its length become 1.
+"""
