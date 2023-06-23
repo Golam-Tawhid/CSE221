@@ -15,8 +15,8 @@ def final_merge(n_list, m_list):
 
     return f_list
 
-inp = open('Lab 2/Task 2/input2.txt', 'r')
-out = open('Lab 2/Task 2/output2.txt', 'w')
+inp = open('Lab 2\Task 2\input2.txt', 'r')
+out = open('Lab 2\Task 2\output2.txt', 'w')
 
 n = int(inp.readline().strip())
 n_list = list(map(int, inp.readline().strip().split()))
@@ -26,6 +26,6 @@ m_list = list(map(int, inp.readline().strip().split()))
 
 f_list = final_merge(n_list, m_list)
 
-print(' '.join(str(element) for element in f_list), file=out)
+print(' '.join(str(i) for i in f_list), file=out)
 
 out.close()

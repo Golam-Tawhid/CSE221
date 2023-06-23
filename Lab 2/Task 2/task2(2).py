@@ -26,10 +26,10 @@ while i<int(n) and j<int(m):
 
 if i<int(n):
     f_list.extend(n_list[i:])
-    print(n_list[i:])
+
 elif j<int(m):
      f_list.extend(m_list[j:])
 
 
-print(' '.join(str(element) for element in f_list), file=out)
+print(' '.join(str(i) for i in f_list), file=out)
 out.close()

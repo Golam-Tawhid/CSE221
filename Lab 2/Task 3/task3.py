@@ -26,14 +26,14 @@ def merge_sort(arr):
     return merge(l_arr, r_arr)
 
 
-inp = open('Lab 2/Task 3/input3.txt', 'r')
-out = open('Lab 2/Task 3/output3.txt', 'w')
+inp = open('Lab 2\Task 3\input3.txt', 'r')
+out = open('Lab 2\Task 3\output3.txt', 'w')
 
 n = int(inp.readline().strip())
 arr= list(map(int, inp.readline().strip().split()))
 
 f_list = merge_sort(arr)
 
-print(' '.join(str(element) for element in f_list), file=out)
+print(' '.join(str(i) for i in f_list), file=out)
 
 out.close()
