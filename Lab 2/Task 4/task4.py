@@ -9,8 +9,8 @@ def find_max(arr, low, hi):
 
     return max(l_arr, r_arr)
 
-inp = open('Lab 2\Task 4\input4,txt', 'r')
-out = open('Lab 2\Task 4\output4,txt', 'w')
+inp = open('Lab 2\Task 4\input4.txt', 'r')
+out = open('Lab 2\Task 4\output4.txt', 'w')
 
 n = int(inp.readline().strip())
 arr= list(map(int, inp.readline().strip().split()))
