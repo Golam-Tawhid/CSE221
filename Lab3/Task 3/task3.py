@@ -19,16 +19,11 @@ def partition(arr, low, high):
     
     return i + 1
 
-
-# Read input
 inp = open('Lab3/Task 3/input3.txt','r')
 out = open('Lab3/Task 3/output3.txt','w')
 
-N= int(inp.readline())
-numbers = list(map(int, inp.readline().strip().split()))
+n= int(inp.readline())
+arr = list(map(int, inp.readline().strip().split()))
+quickSort(arr, 0, n - 1)
 
-
-sorted=quickSort(numbers, 0, N - 1)
-
-# Print the sorted list
-print(*numbers, file=out)
+print(*arr, file=out)

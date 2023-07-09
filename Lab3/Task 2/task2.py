@@ -1,54 +1,52 @@
-# def mergeSort(arr):
-#     if len(arr) <= 1:
-#         return arr
+maxVal= float('-inf')
+def mergeSort(arr):
+    if len(arr) <= 1:
+        return arr
 
-#     mid = len(arr) // 2
-#     left = arr[:mid]
-#     right = arr[mid:]
+    mid = len(arr) // 2
+    left = arr[:mid]
+    right = arr[mid:]
 
-#     left = mergeSort(left)
-#     right = mergeSort(right)
+    left = mergeSort(left)
+    right = mergeSort(right)
 
-#     return merge(left, right)
+    return merge(left, right)
 
-# def merge(left, right):
-#     merged = []
-#     i = j = 0
+def merge(left, right):
+    global maxVal
+    merged = []
+    i = j = 0
 
-#     while i < len(left) and j < len(right):
-#         if left[i] <= right[j]:
-#             merged.append(left[i])
-#             i += 1
-#         else:
-#             merged.append(right[j])
-#             j += 1
+    while i < len(left) and j < len(right):
+        print(i,j,left,right)
+        if left[i] <= right[j]:
+            val = left[i] + (right[j] ** 2)
+            maxVal = max(maxVal, val)
+            merged.append(left[i])
+            i += 1
+        else:
+            val = left[i] + (right[j] ** 2)
+            maxVal = max(maxVal, val)
+            merged.append(right[j])
+            j += 1
+        print(merged, maxVal)
+        
+    while i < len(left):
+        merged.append(left[i])
+        i += 1
 
-#     while i < len(left):
-#         merged.append(left[i])
-#         i += 1
+    while j < len(right):
+        merged.append(right[j])
+        j += 1
+    
+    return merged
 
-#     while j < len(right):
-#         merged.append(right[j])
-#         j += 1
-
-#     return merged
-
-def findMaxSum(arr):
-    # s_arr = mergeSort(arr)
-    # print(s_arr)
-    maxS = float('-inf')
-
-    for i in range(len(arr) - 2, 0, -1):
-        val = arr[i] + (arr[i+1] ** 2)
-        maxS = max(maxS, val)
-
-    return maxS
 
 inp = open('Lab3/Task 2/input2.txt','r')
 out = open('Lab3/Task 2/output2.txt','w')
 
-N= int(inp.readline())
-A = list(map(int, inp.readline().strip().split()))
+n = int(inp.readline())
+arr = list(map(int, inp.readline().strip().split()))
 
-maxS = findMaxSum(A)
-print(maxS, file=out)
+maxS = mergeSort(arr)
+print(maxS, maxVal)

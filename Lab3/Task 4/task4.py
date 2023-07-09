@@ -16,22 +16,22 @@ def findKthSmallest(arr, low, high, k):
     if low == high:
         return arr[low]
 
-    pivot_index = partition(arr, low, high)
-    if pivot_index == k - 1:
-        return arr[pivot_index]
-    elif pivot_index > k - 1:
-        return findKthSmallest(arr, low, pivot_index - 1, k)
+    pivot_idx = partition(arr, low, high)
+    if pivot_idx == k - 1:
+        return arr[pivot_idx]
+    elif pivot_idx > k - 1:
+        return findKthSmallest(arr, low, pivot_idx - 1, k)
     else:
-        return findKthSmallest(arr, pivot_index + 1, high, k)
+        return findKthSmallest(arr, pivot_idx + 1, high, k)
 
+inp = open('Lab3/Task 4/input4.txt','r')
+out = open('Lab3/Task 4/output4.txt','w')
 
-# Read input
-N = int(input())
-numbers = list(map(int, input().split()))
-Q = int(input())
+n= int(inp.readline())
+arr = list(map(int, inp.readline().strip().split()))
+m = int(inp.readline())
 
-# Process queries
-for _ in range(Q):
-    K = int(input())
-    kth_smallest = findKthSmallest(numbers, 0, N - 1, K)
-    print(kth_smallest)
+for _ in range(m):
+    k = int(inp.readline())
+    kth_smallest = findKthSmallest(arr, 0, n - 1, k)
+    print(kth_smallest, file=out)
