@@ -17,12 +17,13 @@ def solution(arr1, arr2):
         print(i,j,arr1,arr2)
         if i>= len(arr1):
             fin.extend(arr2[j:])
-            j+=1
-        
+            j+=len(arr2)
+
         elif j>= len(arr2):
             fin.extend(arr1[i:])
-            count+=1
-            i+=1
+            # count+=1
+            i+=len(arr1)
+        
         
         else:
             if arr1[i] < arr2[j]:
@@ -31,9 +32,10 @@ def solution(arr1, arr2):
 
             else:
                 fin.append(arr2[j])
-                count+=1
+                count+=len(arr1)-i
                 j+=1
         print(fin, count)
+
     return fin
 
 
@@ -50,5 +52,5 @@ arr = list(map(int, inp.readline().strip().split()))
 
 final= divide(arr)
 
-# print(final)
-print(count)
+print(final)
+print(count, file=out)
