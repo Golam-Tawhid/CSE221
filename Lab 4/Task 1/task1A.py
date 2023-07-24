@@ -4,8 +4,8 @@ def adjMatrix(n, matrix):
             print(matrix[i][j], end=' ', file=out)
         print(file=out)
 
-inp = open('Lab 4/Task 1/input1a_2.txt','r')
-out = open('Lab 4/Task 1/output1a_2.txt','w')
+inp = open('Lab 4/Task 1/input1a.txt','r')
+out = open('Lab 4/Task 1/output1a.txt','w')
 
 n, m = map(int, inp.readline().strip().split())
 

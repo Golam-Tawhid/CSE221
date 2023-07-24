@@ -1,5 +1,3 @@
-from collections import defaultdict
-
 def dfs(graph, start):
     visited = [False] * (len(graph) + 1)
     stack = [start]
@@ -18,13 +16,13 @@ def dfs(graph, start):
     return dfsPth
 
 
-inp = open('Lab 4/Task 3/input3_2.txt','r')
-out = open('Lab 4/Task 3/output3_2.txt','w')
+inp = open('Lab 4/Task 3/input3.txt','r')
+out = open('Lab 4/Task 3/output3.txt','w')
 
 n, m = map(int, inp.readline().strip().split())
 
 
-graph = defaultdict(list)
+graph = {i: [] for i in range(1, n + 1)}
 for i in range(m):
     u, v = map(int, inp.readline().strip().split())
     graph[u].append(v)

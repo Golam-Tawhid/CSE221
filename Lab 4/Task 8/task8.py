@@ -1,12 +1,12 @@
-def find_parent(parent, node):
+def parentFind(parent, node):
     if parent[node] == node:
         return node
-    parent[node] = find_parent(parent, parent[node])
+    parent[node] = parentFind(parent, parent[node])
     return parent[node]
 
 def union_sets(parent, size, node1, node2):
-    root1 = find_parent(parent, node1)
-    root2 = find_parent(parent, node2)
+    root1 = parentFind(parent, node1)
+    root2 = parentFind(parent, node2)
 
     if root1 != root2:
         if size[root1] >= size[root2]:
@@ -16,24 +16,19 @@ def union_sets(parent, size, node1, node2):
             parent[root1] = root2
             size[root2] += size[root1]
 
-# Read the number of test cases
-T = int(input())
+inp = open('Lab 4/Task 8/input8.txt','r')
+out = open('Lab 4/Task 8/output8.txt','w')
+t = int(inp.readline())
 
-for case in range(1, T + 1):
-    # Read the number of dual fights
-    n = int(input())
-
-    # Initialize disjoint sets and sizes
+for i in range(1, t + 1):
+    n = int(inp.readline())
     parent = [i for i in range(2 * n + 1)]
     size = [1] * (2 * n + 1)
 
-    # Process each dual fight
-    for _ in range(n):
-        u, v = map(int, input().split())
+    for i in range(n):
+        u, v = map(int, inp.readline().strip().split())
         union_sets(parent, size, u, v)
 
-    # Find the maximum possible number of Vampires or Lykans
     max_members = max(size)
 
-    # Print the result
-    print(f"Case {case}: {max_members}")
+    print(f"Case {i}: {max_members}", file=out)

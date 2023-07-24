@@ -7,8 +7,8 @@ def adjList(n, m):
 
     return adj_lst
 
-inp = open('Lab 4/Task 1/input1b_1.txt','r')
-out = open('Lab 4/Task 1/output1b_1.txt','w')
+inp = open('Lab 4/Task 1/input1b.txt','r')
+out = open('Lab 4/Task 1/output1b.txt','w')
 
 n, m = map(int, inp.readline().strip().split())
 

@@ -1,15 +1,13 @@
-from collections import defaultdict, deque
-
 def bfs(graph, start):
     visited = [False] * (len(graph) + 1)
-    queue = deque()
+    queue = []
     bfsPth = []
 
     queue.append(start)
     visited[start] = True
 
     while queue:
-        vrtx = queue.popleft()
+        vrtx = queue.pop(0)
         bfsPth.append(vrtx)
 
         for nhbr in graph[vrtx]:
@@ -19,16 +17,17 @@ def bfs(graph, start):
 
     return bfsPth
 
-inp = open('Lab 4/Task 2/input2_2.txt','r')
-out = open('Lab 4/Task 2/output2_2.txt','w')
+
+inp = open('Lab 4/Task 2/input2.txt', 'r')
+out = open('Lab 4/Task 2/output2.txt', 'w')
 
 n, m = map(int, inp.readline().strip().split())
 
-graph = defaultdict(list)
+graph = {i: [] for i in range(1, n + 1)}
 for i in range(m):
     u, v = map(int, inp.readline().strip().split())
     graph[u].append(v)
     graph[v].append(u)
 
-bfs = bfs(graph, 1)
-print(*bfs,file=out)
+bfs_result = bfs(graph, 1)
+print(*bfs_result, file=out)

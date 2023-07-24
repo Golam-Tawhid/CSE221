@@ -31,4 +31,3 @@ for row in range(r):
             maxDimonds = max(maxDimonds, dfs(grid, visited, row, col))
             
 print(maxDimonds,file=out)
-

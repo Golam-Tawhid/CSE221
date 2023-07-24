@@ -1,7 +1,7 @@
 from collections import defaultdict, deque
 
-def bfs(grph, strt, dest):
-    queue = deque()
+def bfs(grph, strt, fin):
+    queue = []
     visited = [False] * (len(grph) + 1)
     parent = [0] * (len(grph) + 1)
 
@@ -9,7 +9,7 @@ def bfs(grph, strt, dest):
     visited[strt] = True
 
     while queue:
-        current = queue.popleft()
+        current = queue.pop(0)
 
         for nhbr in grph[current]:
             if not visited[nhbr]:
@@ -18,26 +18,26 @@ def bfs(grph, strt, dest):
                 parent[nhbr] = current
 
     path = []
-    while dest != strt:
-        path.append(dest)
-        dest = parent[dest]
+    while fin != strt:
+        path.append(fin)
+        fin = parent[fin]
     path.append(strt)
 
     return path[::-1]
 
-inp = open('Lab 4/Task 5/input5_1.txt','r')
-out = open('Lab 4/Task 5/output5_1.txt','w')
+inp = open('Lab 4/Task 5/input5.txt','r')
+out = open('Lab 4/Task 5/output5.txt','w')
 
 n, m, d = map(int, inp.readline().strip().split())
 
-grph = defaultdict(list)
-for _ in range(m):
+grph = {i: [] for i in range(1, n + 1)}
+for i in range(m):
     u, v = map(int, inp.readline().strip().split())
     grph[u].append(v)
     grph[v].append(u)
 
-short_pth = bfs(grph, 1, d)
-min_time = len(short_pth) - 1
+shortest_path = bfs(grph, 1, d)
+min_time = len(shortest_path) - 1
 
 print("Time:", min_time, file=out)
-print("Shortest Path:", *short_pth,file=out)
+print("Shortest Path:", *shortest_path,file=out)
