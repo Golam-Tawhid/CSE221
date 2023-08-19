@@ -11,8 +11,8 @@ def fparent(parent, u):
     return parent[u]
 
 
-inp = open('Lab 7/input1.txt','r')
-out = open('Lab 7/output1.txt','w')
+inp = open('Lab 7/Task 3/input3.txt','r')
+out = open('Lab 7/Task 3/output3.txt','w')
 
 n, k = map(int, inp.readline().strip().split())
 parent = [i for i in range(n+1)]
@@ -21,4 +21,4 @@ size= [1]*(n+1)
 for i in range(k):
     u,v= map(int, inp.readline().strip().split())
     addedge(parent, size, u, v)
-    print(size[fparent(parent, u)])
+    print(size[fparent(parent, u)],file=out)
