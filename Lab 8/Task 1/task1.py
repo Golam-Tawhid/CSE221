@@ -14,8 +14,8 @@ def fparent(parent, u):
     parent[u] = fparent(parent, parent[u])
     return parent[u]
 
-inp = open('Lab 8/input1.txt','r')
-out = open('Lab 8/output1.txt','w')
+inp = open('Lab 8/Task 1/input1.txt','r')
+out = open('Lab 8/Task 1/output1.txt','w')
 
 n, m = map(int, inp.readline().strip().split())
 parent = [i for i in range(n+1)]
